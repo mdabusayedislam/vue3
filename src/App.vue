@@ -1,18 +1,29 @@
 <template>
 <h1>DC Heroes</h1>
- <div v-for="(product, num ) in dcHeroes" v-bind:key="product">
-   {{num}}:{{product.a}}
+ <div v-for="(product ) in dcHeroes" v-bind:key="product">
+   {{product.name}}
  </div>
- <input v-model.lazy="newHero"/>
- <button v-bind:disabled="isActive">Add</button>
+ <form @submit.prevent="addhero">
+ <input v-model="newHero" placeholder="Type Name"/>
+ <button type="submit">Add</button>
+ </form>
 </template>
 <script>
-export default{  
+export default{ 
+  methods:{
+  addhero(){
+    if(this.dcHeroes!==''){
+this.dcHeroes.unshift({name:this.newHero});
+          this.newHero="";
+    }
+        
+  }
+  } ,
     data(){
         return{
            isActive:false,
-           newHero:"e",
-           dcHeroes:[{a:'a'},{a:'b'},{a:'c'},{a:'d'}]
+           newHero:"",
+           dcHeroes:[{name:'Superman'},{name:'Superwoman'},{name:'Batman'},{name:'Batwoman'}]
         }
     }
 }
