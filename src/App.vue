@@ -25,6 +25,9 @@ export default{
     randC(){
       return Math.random();
     },
+
+
+    
     setfullName(){
      this.fullname='Set Full Name';
     },
