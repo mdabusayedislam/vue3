@@ -2,15 +2,19 @@
    <AppHeader/>
       <div class="w-full flex">
             <div class="m-auto">
-                 <DcHeros/>            
+                 <DcHeros/>
+                  <Calendar/>   
             </div>
+               
       </div>
+      
 </template>
 <script>
 import AppHeader from './components/AppHeader';
-import DcHeros from './components/DcHeros';
-
+import Calendar from './components/Calendar';
 export default{   
-    components:{AppHeader,DcHeros}               
+    //components:{AppHeader,DcHeros}     
+    components:{AppHeader,Calendar}              
+        
 }
 </script>
